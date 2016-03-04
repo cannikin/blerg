@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'bcrypt', '~> 3.1.7'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug'
