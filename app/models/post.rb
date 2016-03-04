@@ -7,4 +7,12 @@ class Post < ApplicationRecord
   validates :title, :presence => true
   validates :body,  :presence => true
 
+  def author
+    user.name
+  end
+
+  def comments_count
+    comments.count
+  end
+
 end

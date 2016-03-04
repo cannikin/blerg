@@ -1,0 +1,27 @@
+<article id="post-<%= post.id %>" class="post">
+  <header class="clearfix">
+    <h2 class="pull-xs-left"><%= link_to post.title, post %></h2>
+    <% if logged_in? %>
+      <div class="actions pull-xs-right">
+        <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-sm btn-primary-outline' %>
+        <%= link_to 'Delete', post_path(post), :class => 'btn btn-sm btn-danger-outline', :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+      </div>
+    <% end %>
+    <h3>by <%= post.author %></h3>
+  </header>
+  <div class="body">
+    <%= markdown(post.body).html_safe %>
+  </div>
+  <footer>
+    <div class="comment-count pull-sm-left">
+      <%= link_to pluralize(post.comments_count, 'comment'), post_path(post, :anchor => 'comments') %>
+    </div>
+
+    <div class="posted pull-sm-right">
+      Posted
+      <time datetime="<%= post.created_at.to_s(:iso8601) %>">
+        <%= post.created_at.strftime('%B %-d, %Y @ %l:%M%P') %>
+      </time>
+    </div>
+  </footer>
+</article>

@@ -1,3 +1,37 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+body.posts {
+
+  .post {
+    margin: 0 0 3rem;
+    padding: 0 0 1rem;
+    border-bottom: $border-width solid $gray-lighter;
+    &:last-child {
+      border-bottom: none;
+    }
+    h2 {
+      font-weight: 400;
+      margin: 0 0 0.2rem;
+    }
+    .actions {
+      margin-top: 0.3rem;
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: $gray-light;
+      margin: 0;
+      clear: both;
+    }
+    .body {
+      margin: 1rem 0;
+    }
+    footer {
+      overflow: auto;
+      margin: 0;
+      font-style: italic;
+      color: $gray-light;
+    }
+  }
+
+}
