@@ -1,11 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  title: MyString
-  body: MyText
-
-two:
-  user: two
-  title: MyString
-  body: MyText
+welcome:
+  user: john
+  title: Welcome to the site
+  body: Lorem ipsum dolar sit amet.
