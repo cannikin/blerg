@@ -2,5 +2,5 @@
 
 john:
   email: john.doe@example.com
-  password_digest: qwerty
+  password_digest: $2a$10$6icM49WC6jHXPpJ2Bn7wX.Exeynd9ai.wxFpoe3ICq9cSZltTQmQy # blerg
   name: John Doe

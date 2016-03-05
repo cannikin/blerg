@@ -14,7 +14,17 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to post_path(@comment.post)
   end
 
+  test "#destroy should require a session" do
+    assert_no_difference('Comment.count', -1) do
+      delete post_comment_url(@comment.post, @comment)
+    end
+
+    assert_redirected_to login_url
+  end
+
   test "should destroy comment" do
+    login
+
     assert_difference('Comment.count', -1) do
       delete post_comment_url(@comment.post, @comment)
     end
