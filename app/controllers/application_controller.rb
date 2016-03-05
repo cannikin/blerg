@@ -5,11 +5,23 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?, :current_user
 
   def logged_in?
-    false
+    current_user.present?
   end
 
   def current_user
-    User.first
+    @current_user ||= begin
+      if session[:user_id]
+        User.find(session[:user_id])
+      end
+    end
+  end
+
+  def log_in_user(user)
+    session[:user_id] = user.id
+  end
+
+  def log_out_user
+    reset_session
   end
 
   def require_session
