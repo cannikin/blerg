@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.order(:created_at => :desc)
+    @posts = Post.includes(:comments).order(:created_at => :desc)
   end
 
   # GET /posts/1
@@ -49,11 +49,9 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  private def set_post
+    @post = Post.includes(:comments).find(params[:id])
+  end
 
     # Only allow a trusted parameter "white list" through.
     def post_params
