@@ -1,24 +1,24 @@
-## README
+# Blerg
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This blog is a sample app for my book [Pragmatic Rails Deployment on AWS](http://pragmaticrailsdeployment.com). This code is a functioning blog, that while awesome, probably won't do you much good if you're not following along with the book.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Install required gems:
 
-* System dependencies
+    bundle install
 
-* Configuration
+Setup and seed the database:
 
-* Database creation
+    bin/rails db:setup
 
-* Database initialization
+And start the server:
 
-* How to run the test suite
+    bin/rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+Head to http://localhost:3000 and you should be ready to go.
 
-* Deployment instructions
+## Branches
 
-* ...
+There are several branches in the repo that represent the state of the app after several rounds of updates outlined in the book. To get right to the final ready-to-deploy version of the app checkout the `deploy-ready` branch.
+
