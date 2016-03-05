@@ -12,6 +12,9 @@
   <div class="body">
     <%= markdown(post.body).html_safe %>
   </div>
+  <% if post.attachment.present? %>
+    <%= image_tag post.attachment.url(:large) %>
+  <% end %>
   <footer>
     <div class="comment-count pull-sm-left">
       <%= link_to pluralize(post.comments_count, 'comment'), post_path(post, :anchor => 'comments') %>

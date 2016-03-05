@@ -7,6 +7,8 @@ class Post < ApplicationRecord
   validates :title, :presence => true
   validates :body,  :presence => true
 
+  mount_uploader :attachment, AttachmentUploader
+
   def author
     user.name
   end
