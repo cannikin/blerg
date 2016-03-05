@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'bcrypt', '~> 3.1.7'
 gem 'redcarpet'
+gem 'mini_magick'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug'
