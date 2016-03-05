@@ -1,0 +1,16 @@
+<div id="comment-<%= comment.id %>" class="comment">
+  <header>
+    <h5 class="pull-sm-left">
+      Comment from
+      <% if comment.email %>
+        <%= mail_to comment.name, comment.email %>
+      <% else %>
+        <%= comment.name %>
+      <% end %>
+    </h5>
+    <time class="pull-sm-right" datetime="<%= comment.created_at.to_s(:iso8601) %>">
+      <%= comment.created_at.strftime('%B %-d, %Y @ %l:%M%P') %>
+    </time>
+  </header>
+  <%= markdown(comment.body).html_safe %>
+</div>

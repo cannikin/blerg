@@ -2,12 +2,20 @@
 
 body.posts {
 
+  .post, .comment {
+    header {
+      clear: both;
+      overflow: auto;
+    }
+  }
+
   .post {
     margin: 0 0 3rem;
-    padding: 0 0 1rem;
-    border-bottom: $border-width solid $gray-lighter;
-    &:last-child {
-      border-bottom: none;
+    padding: 3rem 0 0;
+    border-top: $border-width solid $gray-lighter;
+    &:first-child {
+      padding-top: 0;
+      border-top: none;
     }
     h2 {
       font-weight: 400;
@@ -31,6 +39,57 @@ body.posts {
       margin: 0;
       font-style: italic;
       color: $gray-light;
+    }
+  }
+
+  .comments {
+    padding: 1rem 0 0;
+    header {
+      margin: 0 0 1rem;
+    }
+    h3 {
+      margin: 0 0 2rem;
+      padding: 0 0 1rem;
+      border-bottom: 3px double $gray-lighter;
+    }
+    .comment {
+      margin: 2rem 0 1rem;
+      padding: 0 0 1rem;
+      border-bottom: 1px solid $gray-lighter;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    time {
+      color: $gray-light;
+      font-size: 0.9rem;
+    }
+    .blank {
+      color: $gray-light;
+      margin: 2em 0;
+      font-style: italic;
+    }
+  }
+
+  .new-comment {
+    padding: 2rem 0 0;
+    border-top: 3px double $gray-lighter;
+    h4 {
+      margin: 0 0 2rem;
+    }
+  }
+
+  .post-form {
+    textarea {
+      height: 20em;
+    }
+  }
+
+  .comment-form {
+    margin: 1rem 0 2rem;
+    padding: 0 0 2rem;
+    textarea {
+      height: 10em;
     }
   }
 

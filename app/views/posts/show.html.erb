@@ -1,1 +1,15 @@
 <%= render @post %>
+
+<section id="comments" class="comments">
+  <h3>Comments</h3>
+  <% if @post.comments.any? %>
+    <%= render @post.comments %>
+  <% else %>
+    <p class="blank">No comments yet. Be the first!</p>
+  <% end %>
+</section>
+
+<section class="new-comment">
+  <h4>Add a comment</h4>
+  <%= render 'comments/form', :comment => @new_comment %>
+</section>

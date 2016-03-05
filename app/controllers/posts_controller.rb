@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+    @new_comment = Comment.new(:post => @post)
   end
 
   # GET /posts/new
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
 
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
