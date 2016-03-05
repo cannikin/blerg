@@ -7,6 +7,5 @@ Rails.application.routes.draw do
     post 'login'  => :create
     get  'logout' => :destroy
   end
-
   root :to => 'posts#index'
 end

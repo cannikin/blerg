@@ -23,6 +23,13 @@
     <%= f.text_area :body, :class => 'form-control', :placeholder => 'Your comment...' %>
   </fieldset>
 
+  <div class="checkbox">
+    <label>
+      <%= f.check_box :notify, :class => 'form-control' %>
+      Notify me of any new comments on this post (email required)
+    </label>
+  </div>
+
   <div class="actions">
     <%= f.submit 'Add Comment', :class => 'btn btn-primary' %>
   </div>

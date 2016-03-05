@@ -17,4 +17,8 @@ class Post < ApplicationRecord
     comments.count
   end
 
+  def notify_comments
+    comments.with_notifications
+  end
+
 end

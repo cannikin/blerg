@@ -7,4 +7,6 @@ class Comment < ApplicationRecord
   validates :email, :allow_blank => true, :format => { :with => EMAIL_REGEX }
   validates :body,  :presence => true
 
+  scope :with_notifications, -> { where(:notify => true) }
+
 end

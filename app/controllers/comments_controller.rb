@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @comment.post = @post
 
     if @comment.save!
+      notify_users
       redirect_to @post, notice: 'Your comment was added!'
     else
       render @post
@@ -29,7 +30,13 @@ class CommentsController < ApplicationController
   end
 
   private def comment_params
-    params.require(:comment).permit(:name, :email, :body)
+    params.require(:comment).permit(:name, :email, :body, :notify)
+  end
+
+  private def notify_users
+    @post.notify_comments.each do |comment|
+      CommentMailer.new_comment(comment).deliver unless comment == @comment
+    end
   end
 
 end
