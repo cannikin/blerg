@@ -1,0 +1,8 @@
+<h1>New Comment!</h1>
+
+<p>
+  You asked to be notified of new comments posted to the <%= @post.title %>
+  blerg post on blerg.com:
+</p>
+
+<p><%= link_to post_url(@post, :anchor => "comment-#{@comment.id}"), post_url(@post, :anchor => "comment-#{@comment.id}") %></p>
