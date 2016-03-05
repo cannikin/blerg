@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+  before_action :require_session, :only => [:destroy]
   before_action :set_post
   before_action :set_comment, only: [:destroy]
 
