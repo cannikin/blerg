@@ -3,7 +3,7 @@
     <h5 class="pull-sm-left">
       Comment from
       <% if comment.email %>
-        <%= mail_to comment.name, comment.email %>
+        <%= link_to comment.name, "mailto:#{comment.email}" %>
       <% else %>
         <%= comment.name %>
       <% end %>
