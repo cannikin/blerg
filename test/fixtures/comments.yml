@@ -5,4 +5,4 @@ first:
   name: Jane Doe
   email: jane.doe@example.com
   body: Great first post!
-
+  notify: false
