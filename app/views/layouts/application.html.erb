@@ -31,7 +31,8 @@
             <% end %>
           </ul>
         </nav>
-        <h1><%= link_to 'Welcome to the Blerg', root_path %></h1>
+        <%= image_tag 'logo.png', :alt => 'B!', :class => 'logo' %>
+        <h1><%= link_to 'The Blerg', root_path %></h1>
       </header>
 
       <% if flash.present? %>
